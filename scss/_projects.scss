@@ -8,6 +8,7 @@
   .projects-content {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--sizer-3);
+    padding: var(--sizer-3) 0;
 
     .project {
       border-radius: 10px;
