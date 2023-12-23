@@ -1,0 +1,56 @@
+@import 'home';
+@import 'about';
+@import 'skills';
+@import 'projects';
+@import 'config';
+
+/* Navbar */
+.navbar {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: var(--sizer-1) var(--sizer-5);
+  justify-content: space-between;
+  box-shadow: 2px 3px 5px grey;
+
+  .menu {
+    .menu__list {
+      list-style: none;
+      cursor: pointer;
+    }
+    
+    .menu__list:hover {
+      border-color: var(--green);
+      border-width: 0 0 1px 0;
+      border-style: solid;
+    }
+
+    .active-menu {
+      border-color: green;
+      border-width: 0 0 2px 0 !important;
+      border-style: solid;
+    }
+  }
+
+  .themes {
+    .icon-container {
+      width: calc(var(--radius) * 2);
+      height: calc(var(--radius) * 2);
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+
+/* BODY */
+main {
+  padding: calc(var(--sizer-5) * 2) 0;
+  flex-direction: column;
+  gap: var(--sizer-5);
+}
