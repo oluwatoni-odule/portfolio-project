@@ -45,3 +45,50 @@ particlesJS('particles-js', {
     },
   },
 });
+
+
+//RECAPTCHA
+const express = require('express');
+const axios = require('axios');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Serve your HTML form
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+// Handle form submissions
+app.post('/submit', async (req, res) => {
+  const { recaptcha, /* other form fields */ } = req.body;
+
+  // Verify reCAPTCHA
+  const recaptchaSecretKey = 'YOUR_RECAPTCHA_SECRET_KEY'; // Replace with your Secret Key
+  const recaptchaVerificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${recaptcha}`;
+
+  try {
+    const response = await axios.post(recaptchaVerificationURL);
+    const { success } = response.data;
+
+    if (success) {
+      // reCAPTCHA verification passed
+      // Process other form data
+      res.send('Form submitted successfully!');
+    } else {
+      // reCAPTCHA verification failed
+      res.status(400).send('reCAPTCHA verification failed.');
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});

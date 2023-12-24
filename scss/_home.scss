@@ -26,21 +26,6 @@
         font-weight: 700;
       }
 
-      .button-container {
-        .contact-btn {
-          width: 180px;
-          padding: calc(var(--sizer-1) * 0.25) calc(var(--sizer-2) * 0.75);
-          border: none;
-          border-radius: calc(var(--radius) * 0.65);
-          transition: background 0.4s ease;
-        }
-
-        .contact-btn:hover {
-          color: var(--green);
-          background-color: var(--white);
-        }
-      }
-
       .icons-section {
         .icons-container {
           justify-content: space-evenly;

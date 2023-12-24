@@ -1,17 +1,21 @@
 .projects {
   padding: var(--sizer-3) calc(var(--sizer-5) * 3);
 
-  header {
-    padding: calc(var(--sizer-1) * 0.5) 0;
-  }
-
   .projects-content {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--sizer-3);
     padding: var(--sizer-3) 0;
 
     .project {
-      border-radius: 10px;
+      img {
+        border-radius: 10px;
+      }
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
     }
   }
 }

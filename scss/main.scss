@@ -2,6 +2,7 @@
 @import 'about';
 @import 'skills';
 @import 'projects';
+@import 'contact';
 @import 'config';
 
 /* Navbar */
@@ -12,8 +13,17 @@
   left: 0;
   width: 100vw;
   padding: var(--sizer-1) var(--sizer-5);
-  justify-content: space-between;
+  justify-content: space-evenly;
   box-shadow: 2px 3px 5px grey;
+
+  .hamburger-and-logo {
+    gap: var(--sizer-5);
+    align-items: center;
+
+    .hamburger {
+      display: none;
+    }
+  }
 
   .menu {
     .menu__list {

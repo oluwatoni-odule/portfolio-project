@@ -1,0 +1,39 @@
+.contact {
+  .contact-content {
+    justify-content: center;
+    align-items: center;
+
+    form {
+      flex-direction: column;
+      gap: var(--sizer-1);
+      width: 40%;
+      
+      input, textarea, .g-recaptcha {
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: calc(var(--sizer-1) * 0.75) var(--sizer-1);
+        font-weight: 700;
+      }
+
+      textarea {
+        height: 200px;
+      }
+
+      input:focus, textarea:focus {
+        border: 2px solid var(--green);
+        outline: none;
+      }
+
+      .g-recaptcha {
+        align-content: center;
+        justify-content: center;
+        margin-bottom: var(--sizer-1);
+      }
+
+      button {
+        align-self: flex-end;
+      }
+    }
+  }
+}

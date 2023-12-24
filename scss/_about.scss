@@ -1,8 +1,6 @@
 .about {
   padding: var(--sizer-3) calc(var(--sizer-5) * 3);
-  header {
-    padding: calc(var(--sizer-1) * 0.5) 0;
-  }
+  
 
   .about-content {
     grid-template-columns: 1fr 1fr;
@@ -19,6 +17,8 @@
 
     .about-info {
       padding: var(--sizer-3);
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }

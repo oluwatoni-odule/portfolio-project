@@ -6,9 +6,26 @@
     <link rel="stylesheet" href="./css/main.css" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <nav class="navbar bg-black-opacity flex">
+      <div class="hamburger-and-logo flex">
+        <div class="hamburger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+            <rect width="100%" height="100%" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>          
+        </div>
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+            <rect width="100%" height="100%" fill="none"/>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="white">
+              &lt;/&gt;
+            </text>
+          </svg>
+        </div> 
+      </div>
       <div class="menu flex gap-3">
         <li class="menu__list white font-bold active-menu">Home</li>
         <li class="menu__list white font-bold">About</li>
@@ -111,9 +128,10 @@
           <div class="about-image flex">
             <img src="images/hero-image-2.jpg" alt="" />
           </div>
-          <div class="about-info white">
+          <div class="about-info flex white">
             <h3 class="font-bold">Hello 👋</h3>
-            <p>I'm Odule Oluwatoni.<br> I graduated from Lagos State University (LASU) with a degree in Electronics and Computer Engineering in 2023. I started my journey in web development in 2022 and have since been deeply passionate about continuous learning and expanding my skills in this field.
+            <p>I'm Odule Oluwatoni.<br> I graduated from Lagos State University (LASU) with a degree in Electronics and Computer Engineering in 2023. I started my journey in web development in 2022 and have since been deeply passionate about continuous learning and expanding my skills in this field. <br>
+              Time is of the essence, so I constantly challenge and improve myself to make the most of it. <br> I love programming and am eager to add value to society using this skill.
             </p>
           </div>
         </div>
@@ -178,26 +196,60 @@
         </header>
         <div class="projects-content grid">
           <div class="project">
-            <img src="images/project-1.png" alt="">
+            <a href="https://github.com/oluwatoni-odule/multi-step-form"><img src="images/project-1.png" alt=""></a>
           </div>
           <div class="project">
-            <img src="images/project-2.png" alt="">
+            <a href="https://github.com/oluwatoni-odule/room-homepage-challenge">
+              <img src="images/project-2.png" alt="">
+            </a>
           </div>
           <div class="project">
-            <img src="images/project-3.png" alt="project">
+            <a href="">
+              <img src="images/project-3.png" alt="project">
+            </a>
           </div>
           <div class="project">
+           <a href="https://github.com/oluwatoni-odule/Weather-App">
             <img src="images/project-4.png" alt="">
+           </a>
           </div>
           <div class="project">
-            <img src="images/project-5.png" alt="">
+            <a href="https://github.com/oluwatoni-odule/Manage-Landing-Page">
+              <img src="images/project-5.png" alt="">
+            </a>
           </div>
           <div class="project">
-            <img src="images/project-6.png" alt="">
+            <a href="https://github.com/oluwatoni-odule/Expense-Tracker-App">
+              <img src="images/project-6.png" alt="">
+            </a>
           </div>
         </div>
       </section>
+      <section class="contact">
+        <header class="flex">
+          <h2 class="section-title uppercase green font-bold">Contact</h2>
+        </header>
+        <div class="contact-content flex">
+          <form action="/submit" method="post" class="flex">
+            <label for="name"></label>
+            <input type="text" placeholder="Name" id="name" name="name" required>
+            
+            <label for="email"></label>
+            <input type="email" placeholder="Email" id="email" name="email" required>
+            
+            <label for="message"></label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="g-recaptcha flex" data-sitekey="6LfYJTspAAAAAE2x7wd8nPc5YikcPUD3cNBSZyE-"></div>
+            
+            <button type="submit" class="bg-green font-bold white">Send</button>
+          </form>
+        </div>
+      </section>
     </main>
+    <footer>
+      <h1 class="white bg-black-opacity flex">Oluwatoni</h1>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -189,6 +189,8 @@ h2,
 section {
   header {
     justify-content: center;
+    padding: calc(var(--sizer-1)) 0;
+
     .section-title {
       display: inline-block;
       position: relative;
@@ -197,12 +199,25 @@ section {
     .section-title:after {
       position: absolute;
       content: '';
-      width: 90%;
+      width: 80%;
       height: 3px;
       background-color: var(--green);
-      left: 5%;
+      left: 10%;
       bottom: -5px;
       border-radius: 1.5px;
     }
   }
+}
+
+button {
+  width: 180px;
+  padding: calc(var(--sizer-1) * 0.25) calc(var(--sizer-2) * 0.75);
+  border: none;
+  border-radius: calc(var(--radius) * 0.65);
+  transition: background 0.4s ease;
+}
+
+button:hover {
+  color: var(--green);
+  background-color: var(--white);
 }
