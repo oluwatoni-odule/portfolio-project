@@ -1,42 +1,54 @@
 // Menu
-.menu-card {
+#menu-card {
   position: fixed;
-  width: 60vw;
-  height: 100vh;
   z-index: 20;
-  padding: 10px;
+  background-color: #14191b;
+  width: 0;
+  height: 100vh;
+  transition: width 0.3s ease-in-out;
 
-  header {
-    padding: var(--sizer-1);
-    justify-content: flex-end;
-  }
+  .menu-content {
+    padding: 10px;
 
-  ul {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    list-style: none;
+    header {
+      padding: var(--sizer-1);
+      justify-content: flex-end;
 
-    a {
-      text-decoration: none;
-      color: var(--black);
+      svg {
+        cursor: pointer;
+      }
     }
 
-    a:hover {
-      color: var(--green);
-    }
+    ul {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
 
-    a:active {
-      transform: scale(1.1);
+      a {
+        text-decoration: none;
+        color: var(--white);
+      }
+
+      a:hover {
+        color: var(--green);
+      }
+
+      a:active {
+        transform: scale(1.1);
+      }
     }
   }
 }
 
 .overlay {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 15;
 }
 
 /* Navbar */
@@ -102,15 +114,15 @@ main {
     header {
       justify-content: center;
       padding: calc(var(--sizer-1)) 0;
-  
+
       .section-title {
         display: inline-block;
         position: relative;
       }
-  
+
       .section-title:after {
         position: absolute;
-        content: '';
+        content: "";
         width: 80%;
         height: 3px;
         background-color: var(--green);
@@ -119,7 +131,7 @@ main {
         border-radius: 1.5px;
       }
     }
-  }  
+  }
 }
 
 button {

@@ -144,9 +144,11 @@ h2,
 /* COLORS*/
 .bg-white {
   background-color: var(--white);
+  transition: background 0.3s ease-in-out;
 }
 .bg-black {
   background-color: var(--black);
+  transition: background 0.3s ease-in-out;
 }
 .bg-green {
   background-color: var(--green);
@@ -154,6 +156,7 @@ h2,
 
 .bg-black-opacity {
   background-color: var(--black-opacity);
+  transition: background 0.3s ease-in-out;
 }
 
 .white {

@@ -9,29 +9,30 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <div class="menu-card bg-white hidden">
-      <header class="flex">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="30"
-          height="30"
-          fill="black"
-        >
-          <rect width="100%" height="100%" fill="none" />
-          <path
-            d="M12 10.586l-3.707-3.707-1.414 1.414L10.586 12l-3.707 3.707 1.414 1.414L12 13.414l3.707 3.707 1.414-1.414L13.414 12l3.707-3.707-1.414-1.414L12 10.586z"
-          />
-        </svg>
-      </header>
-
-      <ul class="flex font-bold">
-        <a href="#section1" class="font-bold active-menu">Home</a>
-        <a href="#section2" class=" font-bold">About</a>
-        <a href="#section3" class=" font-bold">Skills</a>
-        <a href="#section4" class=" font-bold">Projects</a>
-        <a href="#section5" class=" font-bold">Contact</a>
-      </ul>
+    <div class="menu-card white" id="menu-card">
+      <div class="menu-content hidden">
+        <header class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="30"
+            height="30"
+            fill="white"
+          >
+            <rect width="100%" height="100%" fill="none" />
+            <path
+              d="M12 10.586l-3.707-3.707-1.414 1.414L10.586 12l-3.707 3.707 1.414 1.414L12 13.414l3.707 3.707 1.414-1.414L13.414 12l3.707-3.707-1.414-1.414L12 10.586z"
+            />
+          </svg>
+        </header>
+        <ul class="flex font-bold">
+          <a href="#section1" class="font-bold active-menu">Home</a>
+          <a href="#section2" class=" font-bold">About</a>
+          <a href="#section3" class=" font-bold">Skills</a>
+          <a href="#section4" class=" font-bold">Projects</a>
+          <a href="#section5" class=" font-bold">Contact</a>
+        </ul>
+      </div>
     </div>
     <div class="overlay hidden"></div>
     <nav class="navbar bg-black-opacity flex">
@@ -88,7 +89,8 @@
             <h1 class="fs-4">
               Hi, <br />I'm <span class="green">Oluwatoni</span>
             </h1>
-            <h1 class="fs-4">Front-end Web Developer</h1>
+            <h1 class="fs-4 animated-text" id="message-area"></h1>
+            
             <div class="button-container">
               <button class="contact-btn bg-green fs-2 white font-bold">
                 Contact
@@ -116,7 +118,7 @@
                     </svg>
                   </div>
                 </a>
-                <a href="">
+                <a href="https://www.linkedin.com/in/oluwatoni-odule/">
                   <div class="linked-in">
                     <svg
                       enable-background="new 0 0 56.693 56.693"
@@ -141,7 +143,7 @@
                     </svg>
                   </div>
                 </a>
-                <a href="">
+                <a href="https://www.upwork.com/freelancers/~010fbaa80d041b0ba1">
                   <div class="upwork">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -304,7 +306,7 @@
             </a>
           </div>
           <div class="project">
-            <a href="">
+            <a href="https://github.com/oluwatoni-odule/Standard-Calculator">
               <img src="images/project-3.png" alt="project" />
             </a>
           </div>
@@ -330,7 +332,7 @@
           <h2 class="section-title uppercase green font-bold">Contact</h2>
         </header>
         <div class="contact-content flex">
-          <form action="/submit" method="post" class="flex">
+          <form class="flex">
             <label for="name"></label>
             <input
               type="text"
@@ -352,12 +354,7 @@
             <label for="message"></label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <div
-              class="g-recaptcha flex"
-              data-sitekey="6LfYJTspAAAAAE2x7wd8nPc5YikcPUD3cNBSZyE-"
-            ></div>
-
-            <button type="submit" class="bg-green font-bold white">Send</button>
+            <button class="bg-green font-bold white">Send</button>
           </form>
         </div>
       </section>
@@ -467,6 +464,7 @@
       </div>
       <p class="font-bold">© 2023 copyright all right reserved</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/animejs"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -27,6 +27,11 @@
         font-weight: 700;
       }
 
+      .animated-text {
+        height: 100px;
+        opacity: 0;
+      }
+
       .icons-section {
         .icons-container {
           gap: var(--sizer-1);

@@ -156,10 +156,12 @@ h2,
 /* COLORS*/
 .bg-white {
   background-color: var(--white);
+  transition: background 0.3s ease-in-out;
 }
 
 .bg-black {
   background-color: var(--black);
+  transition: background 0.3s ease-in-out;
 }
 
 .bg-green {
@@ -168,6 +170,7 @@ h2,
 
 .bg-black-opacity {
   background-color: var(--black-opacity);
+  transition: background 0.3s ease-in-out;
 }
 
 .white {
@@ -220,39 +223,49 @@ h2,
   background-color: var(--black); /* Change the color of the scrollbar track */
 }
 
-.menu-card {
+#menu-card {
   position: fixed;
-  width: 60vw;
-  height: 100vh;
   z-index: 20;
+  background-color: #14191b;
+  width: 0;
+  height: 100vh;
+  transition: width 0.3s ease-in-out;
+}
+#menu-card .menu-content {
   padding: 10px;
 }
-.menu-card header {
+#menu-card .menu-content header {
   padding: var(--sizer-1);
   justify-content: flex-end;
 }
-.menu-card ul {
+#menu-card .menu-content header svg {
+  cursor: pointer;
+}
+#menu-card .menu-content ul {
   flex-direction: column;
   gap: 10px;
   padding: 0;
   list-style: none;
 }
-.menu-card ul a {
+#menu-card .menu-content ul a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
 }
-.menu-card ul a:hover {
+#menu-card .menu-content ul a:hover {
   color: var(--green);
 }
-.menu-card ul a:active {
+#menu-card .menu-content ul a:active {
   transform: scale(1.1);
 }
 
 .overlay {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 15;
 }
 
 /* Navbar */
@@ -362,6 +375,10 @@ button:hover {
 }
 .home .home-content .home__info h1 {
   font-weight: 700;
+}
+.home .home-content .home__info .animated-text {
+  height: 100px;
+  opacity: 0;
 }
 .home .home-content .home__info .icons-section .icons-container {
   gap: var(--sizer-1);

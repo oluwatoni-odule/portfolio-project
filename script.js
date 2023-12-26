@@ -38,10 +38,28 @@ contactBtn.addEventListener('click', event => {
 
 // MENU OPEN & CLOSE 
 const hamburger = document.querySelector('.hamburger');
+const menuCard = document.querySelector('.menu-card .menu-content');
+const overlay = document.querySelector('.overlay');
+const closeIcon = document.querySelector('.menu-card header svg');
 
 hamburger.addEventListener('click', event=> {
-  
+  menuCard.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  document.querySelector('#menu-card').style.width = '60vw';
 })
+
+overlay.addEventListener('click', event => {
+  menuCard.classList.add('hidden');
+  overlay.classList.add('hidden');
+  document.querySelector('#menu-card').style.width = '0';
+});
+
+closeIcon.addEventListener('click', event => {
+  menuCard.classList.add('hidden');
+  overlay.classList.add('hidden');
+  document.querySelector('#menu-card').style.width = '0';
+})
+
 
 // CHANGE THEME
 const themeIcon = document.querySelector('.icon-container');
@@ -65,6 +83,7 @@ themeIcon.addEventListener('click', event=> {
     const svgs = body.querySelectorAll('svg');
     const sassIcon = body.querySelector('#sass path');
     const contactInputs = body.querySelectorAll('.contact input, .contact textarea');
+    const hamburgerSvg = document.querySelector('.hamburger svg');
   
 
     body.classList.remove('bg-black');
@@ -85,6 +104,8 @@ themeIcon.addEventListener('click', event=> {
     contactInputs.forEach(input => {
       input.style.border = '1px black solid';
     })
+
+    hamburgerSvg.setAttribute('fill', 'black');
   } else {
     navbar.classList.remove('bg-white');
     navbar.classList.add('bg-black-opacity');
@@ -101,6 +122,7 @@ themeIcon.addEventListener('click', event=> {
     const svgs = body.querySelectorAll('svg');
     const sassIcon = body.querySelector('#sass path');
     const contactInputs = body.querySelectorAll('.contact input, .contact textarea');
+    const hamburgerSvg = document.querySelector('.hamburger svg');
   
 
     body.classList.remove('bg-white');
@@ -121,9 +143,12 @@ themeIcon.addEventListener('click', event=> {
     contactInputs.forEach(input => {
       input.style.border = 'none';
     })
+
+    hamburgerSvg.setAttribute('fill', 'white');
   }
 })
 
+//DRAK THEME BACKGROUND
 particlesJS('particles-js', {
   particles: {
     number: {
@@ -172,100 +197,50 @@ particlesJS('particles-js', {
   },
 });
 
+//ANIMATED TEXT
+document.addEventListener('DOMContentLoaded', function() {
+  const messages = ['Frontend Web Developer', 'Puzzle Enthusiast', 'Serene Maestro'];
+  let currentIndex = 0;
 
-//RECAPTCHA
-const express = require('express');
-const axios = require('axios');
-const bodyParser = require('body-parser');
+  function typeMessage(message, index, callback) {
+    if (index < message.length) {
+      
+      document.getElementById('message-area').textContent += message.charAt(index);
 
-const app = express();
-const port = 3000;
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Serve your HTML form
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
-// Handle form submissions
-app.post('/submit', async (req, res) => {
-  const { recaptcha, /* other form fields */ } = req.body;
-
-  // Verify reCAPTCHA
-  const recaptchaSecretKey = 'YOUR_RECAPTCHA_SECRET_KEY'; // Replace with your Secret Key
-  const recaptchaVerificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${recaptcha}`;
-
-  try {
-    const response = await axios.post(recaptchaVerificationURL);
-    const { success } = response.data;
-
-    if (success) {
-      // reCAPTCHA verification passed
-      // Process other form data
-      res.send('Form submitted successfully!');
+      setTimeout(function() {
+        typeMessage(message, index + 1, callback);
+      }, 100);
     } else {
-      // reCAPTCHA verification failed
-      res.status(400).send('reCAPTCHA verification failed.');
+      
+      callback();
     }
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
   }
+
+  function animateMessage() {
+    const currentMessage = messages[currentIndex];
+    const prevMessage = messages[(currentIndex + messages.length - 1) % messages.length];
+
+    anime({
+      targets: '#message-area',
+      opacity: 1,
+      duration: 1000,
+      easing: 'easeInOutQuad',
+      complete: function() {
+       
+        document.getElementById('message-area').textContent = '';
+
+        
+        typeMessage(currentMessage, 0, function() {
+         
+          currentIndex = (currentIndex + 1) % messages.length;
+
+          setTimeout(animateMessage, 2000);
+        });
+      }
+    });
+  }
+
+  animateMessage();
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
 
-
-//CONTACT FORM
-const nodemailer = require('nodemailer');
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Serve your HTML form
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
-// Handle form submissions
-app.post('/submit', async (req, res) => {
-  const { email, message } = req.body;
-
-  // Verify reCAPTCHA (if you have reCAPTCHA implemented)
-
-  // Configure Nodemailer
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'odulenulerm6@gmail.com', // Replace with your Gmail address
-      pass: 'oluwatoni16' // Replace with your Gmail password or generate an app password
-    }
-  });
-
-  // Define email options
-  const mailOptions = {
-    from: email, // Set the 'from' field dynamically based on user input
-    to: 'odulenulerm6@gmail.com', // Replace with your recipient email address
-    subject: 'New Message from Contact Form',
-    text: `Email: ${email}\nMessage: ${message}`
-  };
-
-  // Send email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      res.send('Error');
-    } else {
-      console.log('Email sent: ' + info.response);
-      res.send('Success');
-    }
-  });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
