@@ -8,6 +8,11 @@
 * {
   margin: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
   line-height: 1.5;
@@ -186,38 +191,15 @@ h2,
   display: none;
 }
 
-section {
-  header {
-    justify-content: center;
-    padding: calc(var(--sizer-1)) 0;
 
-    .section-title {
-      display: inline-block;
-      position: relative;
-    }
-
-    .section-title:after {
-      position: absolute;
-      content: '';
-      width: 80%;
-      height: 3px;
-      background-color: var(--green);
-      left: 10%;
-      bottom: -5px;
-      border-radius: 1.5px;
-    }
-  }
+::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
 }
 
-button {
-  width: 180px;
-  padding: calc(var(--sizer-1) * 0.25) calc(var(--sizer-2) * 0.75);
-  border: none;
-  border-radius: calc(var(--radius) * 0.65);
-  transition: background 0.4s ease;
+::-webkit-scrollbar-thumb {
+  background-color: var(--green); /* Change the color of the scrollbar thumb */
 }
 
-button:hover {
-  color: var(--green);
-  background-color: var(--white);
+::-webkit-scrollbar-track {
+  background-color: var(--black); /* Change the color of the scrollbar track */
 }

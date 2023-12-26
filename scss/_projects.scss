@@ -2,6 +2,7 @@
   padding: var(--sizer-3) calc(var(--sizer-5) * 3);
 
   .projects-content {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--sizer-3);
     padding: var(--sizer-3) 0;

@@ -1,0 +1,129 @@
+@media (max-width: 770px) {
+  .home {
+    .home-content {
+      padding: var(--sizer-1) var(--sizer-3);
+    }
+  }
+  .navbar {
+    .menu {
+      gap: var(--sizer-1);
+    }
+  }
+
+  .about {
+    padding: var(--sizer-2) var(--sizer-1);
+
+    .about-content {
+      flex-direction: column;
+    }
+  }
+
+  .projects {
+    padding: var(--sizer-3) var(--sizer-1);
+    .projects-content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: var(--sizer-1) var(--sizer-1);
+    gap: 30%;
+
+    .hamburger {
+      display: block !important;
+    }
+
+    .menu {
+      display: none;
+    }
+  }
+
+
+  .home {
+    .home-content {
+      padding: var(--sizer-1) var(--sizer-1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .home__info {
+        align-self: flex-start;
+        h1 {
+          font-size: var(--sizer-2);
+        }
+
+        button {
+          width: 120px;
+          font-size: var(--fs-1);
+        }
+
+        .icons-section {
+          position: absolute;
+          bottom: 0;
+
+          .icons-container {
+            flex-direction: column;
+          }
+        }
+      }
+
+      .home__image {
+        align-self: flex-end;
+
+        .image-container {
+          align-self: flex-end;
+          width: 200px;
+          height: 200px;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  .about {
+    padding: var(--sizer-1) var(--sizer-1);
+    .about-content {
+      flex-direction: column;
+
+      .about-info {
+        padding: 0;
+      }
+    }
+  }
+
+  .skills {
+    padding: var(--sizer-1);
+    .skills-content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .projects {
+    .projects-content {
+    padding: 0 var(--sizer-2);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .contact {
+    .contact-content {
+      padding: 0 var(--sizer-1);
+      form{
+        width: 100%;
+
+        button {
+          width: 120px;
+        }
+      }
+    }
+  }
+
+  .main {
+    gap: var(--sizer-1) !important;
+  }
+}

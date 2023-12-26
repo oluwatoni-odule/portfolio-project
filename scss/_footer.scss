@@ -1,0 +1,11 @@
+footer {
+  flex-direction: column;
+  padding: var(--sizer-3);
+  align-items: center;
+  gap: var(--sizer-2);
+  background-color: #14191b;
+
+  .social-media-icons {
+    gap: var(--sizer-1);
+  }
+}

@@ -1,0 +1,136 @@
+// Menu
+.menu-card {
+  position: fixed;
+  width: 60vw;
+  height: 100vh;
+  z-index: 20;
+  padding: 10px;
+
+  header {
+    padding: var(--sizer-1);
+    justify-content: flex-end;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    a:hover {
+      color: var(--green);
+    }
+
+    a:active {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar */
+.navbar {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: var(--sizer-1) var(--sizer-5);
+  justify-content: space-between;
+  box-shadow: 2px 3px 5px grey;
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    a {
+      text-decoration: none;
+    }
+
+    .menu__list {
+      list-style: none;
+      cursor: pointer;
+      color: var(--white);
+    }
+
+    .menu__list:hover {
+      border-color: var(--green);
+      border-width: 0 0 1px 0;
+      border-style: solid;
+    }
+
+    .active-menu {
+      border-color: green;
+      border-width: 0 0 2px 0 !important;
+      border-style: solid;
+    }
+  }
+
+  .themes {
+    .icon-container {
+      width: calc(var(--radius) * 2);
+      height: calc(var(--radius) * 2);
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+
+/* BODY */
+main {
+  padding: calc(var(--sizer-5) * 2) 0;
+  flex-direction: column;
+  gap: var(--sizer-5);
+
+  section {
+    header {
+      justify-content: center;
+      padding: calc(var(--sizer-1)) 0;
+  
+      .section-title {
+        display: inline-block;
+        position: relative;
+      }
+  
+      .section-title:after {
+        position: absolute;
+        content: '';
+        width: 80%;
+        height: 3px;
+        background-color: var(--green);
+        left: 10%;
+        bottom: -5px;
+        border-radius: 1.5px;
+      }
+    }
+  }  
+}
+
+button {
+  width: 180px;
+  padding: calc(var(--sizer-1) * 0.25) calc(var(--sizer-2) * 0.75);
+  border: none;
+  border-radius: calc(var(--radius) * 0.65);
+  transition: background 0.4s ease;
+}
+
+button:hover {
+  color: var(--green);
+  background-color: var(--white);
+}

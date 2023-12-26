@@ -1,7 +1,8 @@
 .skills {
-  padding: var(--sizer-3) calc(var(--sizer-5) * 3);
+  padding: var(--sizer-3) calc(var(--sizer-5) * 2);
 
   .skills-content {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--sizer-3);
     padding: calc(var(--sizer-5) * 2) var(--sizer-5);
