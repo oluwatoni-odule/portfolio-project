@@ -465,13 +465,19 @@ button:hover {
   padding: var(--sizer-3) 0;
 }
 .projects .projects-content .project {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: -moz-max-content;
+  width: max-content;
   transition: transform 0.3s ease-in-out;
 }
 .projects .projects-content .project img {
+  width: 330px;
+  height: 150px;
   border-radius: 10px;
 }
 .projects .projects-content .project:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   transition: transform 0.3s ease-in-out;
 }
 

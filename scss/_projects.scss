@@ -8,14 +8,19 @@
     padding: var(--sizer-3) 0;
 
     .project {
+      border: 1px solid black;
+      border-radius: 10px;
+      width: max-content;
       img {
+        width: 330px;
+        height: 150px;
         border-radius: 10px;
       }
       transition: transform 0.3s ease-in-out;
     }
 
     .project:hover {
-      transform: scale(1.1);
+      transform: scale(1.1) !important;
       transition: transform 0.3s ease-in-out;
     }
   }

@@ -254,6 +254,6 @@ const sr = ScrollReveal({
 });
 
 
-sr.reveal(`.about-content, .project, .skill`, {delay: 200, origin: 'bottom'});
+sr.reveal(`.about-content, .projects-content, .skill`, {delay: 100, origin: 'bottom'});
 sr.reveal(`.skills-content`, {interval: 100});
 sr.reveal(`.image-container`, {origin: 'right'});
