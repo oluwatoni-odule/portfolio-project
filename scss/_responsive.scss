@@ -127,3 +127,18 @@
     gap: var(--sizer-1) !important;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .projects {
+    .projects-content {
+      .project {
+        width: 100%;
+        a {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
