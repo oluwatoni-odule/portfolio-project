@@ -38,26 +38,23 @@ contactBtn.addEventListener('click', event => {
 
 // MENU OPEN & CLOSE 
 const hamburger = document.querySelector('.hamburger');
-const menuCard = document.querySelector('.menu-card .menu-content');
+const menuCard = document.querySelector('.menu-card');
 const overlay = document.querySelector('.overlay');
 const closeIcon = document.querySelector('.menu-card header svg');
 
 hamburger.addEventListener('click', event=> {
-  menuCard.classList.remove('hidden');
   overlay.classList.remove('hidden');
-  document.querySelector('#menu-card').style.width = '60vw';
+  menuCard.style.transform = 'translateX(0)';
 })
 
 overlay.addEventListener('click', event => {
-  menuCard.classList.add('hidden');
   overlay.classList.add('hidden');
-  document.querySelector('#menu-card').style.width = '0';
+  menuCard.style.transform = 'translateX(-100%)';
 });
 
 closeIcon.addEventListener('click', event => {
-  menuCard.classList.add('hidden');
   overlay.classList.add('hidden');
-  document.querySelector('#menu-card').style.width = '0';
+  menuCard.style.transform = 'translateX(-100%)';
 })
 
 
@@ -106,6 +103,13 @@ themeIcon.addEventListener('click', event=> {
     })
 
     hamburgerSvg.setAttribute('fill', 'black');
+
+    const skillDescription = document.querySelectorAll('.skill-description');
+
+    skillDescription.forEach(skill => {
+      skill.style.borderColor = 'black';
+      skill.style.color = 'black';
+    })
   } else {
     navbar.classList.remove('bg-white');
     navbar.classList.add('bg-black-opacity');
@@ -145,6 +149,13 @@ themeIcon.addEventListener('click', event=> {
     })
 
     hamburgerSvg.setAttribute('fill', 'white');
+
+    const skillDescription = document.querySelectorAll('.skill-description');
+
+    skillDescription.forEach(skill => {
+      skill.style.borderColor = 'white';
+      skill.style.color = 'white';
+    })
   }
 })
 

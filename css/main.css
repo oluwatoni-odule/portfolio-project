@@ -227,15 +227,14 @@ h2,
   position: fixed;
   z-index: 20;
   background-color: #14191b;
-  width: 0;
+  width: 60%;
   height: 100vh;
-  transition: width 0.3s ease-in-out;
-}
-#menu-card .menu-content {
-  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  padding: 10px 10px 0 30px;
+  transform: translateX(-100%);
 }
 #menu-card .menu-content header {
-  padding: var(--sizer-1);
+  margin-bottom: 3rem;
   justify-content: flex-end;
 }
 #menu-card .menu-content header svg {
@@ -448,6 +447,7 @@ button:hover {
   padding: 1rem;
   color: white;
   border: 1px solid white;
+  border-radius: 10px;
 }
 .skills .skills-content .skill-content:hover {
   transform: scale(1.2);
