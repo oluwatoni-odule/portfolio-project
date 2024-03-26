@@ -103,13 +103,6 @@ themeIcon.addEventListener('click', event=> {
     })
 
     hamburgerSvg.setAttribute('fill', 'black');
-
-    const skillDescription = document.querySelectorAll('.skill-description');
-
-    skillDescription.forEach(skill => {
-      skill.style.borderColor = 'black';
-      skill.style.color = 'black';
-    })
   } else {
     navbar.classList.remove('bg-white');
     navbar.classList.add('bg-black-opacity');
@@ -149,13 +142,6 @@ themeIcon.addEventListener('click', event=> {
     })
 
     hamburgerSvg.setAttribute('fill', 'white');
-
-    const skillDescription = document.querySelectorAll('.skill-description');
-
-    skillDescription.forEach(skill => {
-      skill.style.borderColor = 'white';
-      skill.style.color = 'white';
-    })
   }
 })
 
@@ -256,15 +242,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // SCROLL REVEAL ANIMATION
-const sr = ScrollReveal({
-  origin: 'top',
-  distance: '60px',
-  duration: 2500,
-  delay: 400,
-  reset: true
-});
-
-
-sr.reveal(`.about-content, .projects-content, .skill`, {delay: 100, origin: 'bottom'});
-sr.reveal(`.skills-content`, {interval: 100});
-sr.reveal(`.image-container`, {origin: 'right'});
+document.addEventListener('DOMContentLoaded', event=> {
+  const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    reset: true
+  });
+  
+  
+  sr.reveal(`.about-content, .projects-content, .skill`, {delay: 100, origin: 'bottom'});
+  sr.reveal(`.skills-content`, {interval: 100});
+  sr.reveal(`.image-container`, {origin: 'right'});
+})
