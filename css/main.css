@@ -423,7 +423,7 @@ button:hover {
 }
 .skills .skills-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--sizer-3);
   padding: calc(var(--sizer-5) * 2) var(--sizer-5);
   justify-items: center;
@@ -442,12 +442,6 @@ button:hover {
   align-items: center;
   gap: var(--sizer-1);
   transition: transform 0.3s ease-in-out;
-}
-.skills .skills-content .skill .skill-description {
-  padding: 1rem;
-  color: white;
-  border: 1px solid white;
-  border-radius: 10px;
 }
 .skills .skills-content .skill-content:hover {
   transform: scale(1.2);
@@ -610,8 +604,11 @@ footer .social-media-icons {
     padding: var(--sizer-1);
   }
   .skills .skills-content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .skills .skills-content .skill .skill-content .skill-name {
+    font-size: calc(var(--fs-1) * 0.75);
   }
   .projects .projects-content {
     padding: 0 var(--sizer-2);
@@ -637,5 +634,10 @@ footer .social-media-icons {
   }
   .projects .projects-content .project a img {
     width: 100%;
+  }
+}
+@media (max-width: 770px) {
+  .skills-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }/*# sourceMappingURL=main.css.map */

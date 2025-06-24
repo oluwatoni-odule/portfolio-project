@@ -41,7 +41,6 @@
     }
   }
 
-
   .home {
     .home-content {
       padding: var(--sizer-1) var(--sizer-1);
@@ -82,7 +81,7 @@
       }
     }
   }
-  
+
   .about {
     padding: var(--sizer-1) var(--sizer-1);
     .about-content {
@@ -97,14 +96,21 @@
   .skills {
     padding: var(--sizer-1);
     .skills-content {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .skill {
+        .skill-content {
+          .skill-name {
+            font-size: calc(var(--fs-1) * 0.75) ;
+          }
+        }
+      }
     }
   }
 
   .projects {
     .projects-content {
-    padding: 0 var(--sizer-2);
+      padding: 0 var(--sizer-2);
       display: flex;
       flex-direction: column;
     }
@@ -113,7 +119,7 @@
   .contact {
     .contact-content {
       padding: 0 var(--sizer-1);
-      form{
+      form {
         width: 100%;
 
         button {
@@ -140,5 +146,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 770px) {
+  .skills-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

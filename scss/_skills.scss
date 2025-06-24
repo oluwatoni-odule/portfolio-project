@@ -3,7 +3,7 @@
 
   .skills-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--sizer-3);
     padding: calc(var(--sizer-5) * 2) var(--sizer-5);
     justify-items: center;
