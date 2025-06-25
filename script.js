@@ -81,6 +81,8 @@ themeIcon.addEventListener('click', event=> {
     const sassIcon = body.querySelector('#sass path');
     const contactInputs = body.querySelectorAll('.contact input, .contact textarea');
     const hamburgerSvg = document.querySelector('.hamburger svg');
+    hamburgerSvg.classList.remove("dark-theme-svg");
+    hamburgerSvg.classList.add("light-theme-svg");
   
 
     body.classList.remove('bg-black');
@@ -102,7 +104,7 @@ themeIcon.addEventListener('click', event=> {
       input.style.border = '1px black solid';
     })
 
-    hamburgerSvg.setAttribute('fill', 'black');
+    // hamburgerSvg.setAttribute('fill', 'black');
   } else {
     navbar.classList.remove('bg-white');
     navbar.classList.add('bg-black-opacity');
@@ -120,6 +122,8 @@ themeIcon.addEventListener('click', event=> {
     const sassIcon = body.querySelector('#sass path');
     const contactInputs = body.querySelectorAll('.contact input, .contact textarea');
     const hamburgerSvg = document.querySelector('.hamburger svg');
+    hamburgerSvg.classList.remove("light-theme-svg");
+    hamburgerSvg.classList.add("dark-theme-svg");
   
 
     body.classList.remove('bg-white');
@@ -141,7 +145,7 @@ themeIcon.addEventListener('click', event=> {
       input.style.border = 'none';
     })
 
-    hamburgerSvg.setAttribute('fill', 'white');
+    // hamburgerSvg.setAttribute('fill', 'white');
   }
 })
 
